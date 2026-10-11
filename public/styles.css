@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --term-bg: #090b10;
+    --panel-bg: #10141f;
+    --neon-amber: #ffb400;
+    --neon-glow: rgba(255, 180, 0, 0.28);
+    --neon-cyan: #00f0ff;
+    --cyber-border: #1e283d;
+    --text-main: #f3f4f6;
+    --text-dim: #7d8b9e;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: var(--term-bg);
+    background-image:
+        linear-gradient(rgba(255, 180, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 180, 0, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+/* Brutalist Angular Box */
+.terminal-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--cyber-border);
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.terminal-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-amber), var(--neon-cyan), transparent);
+}
+
+/* Monospace Neon Button */
+.cyber-btn {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 0;
+    position: relative;
+    transition: all 0.15s ease-in-out;
+}
+
+.cyber-btn-amber {
+    background: var(--neon-amber);
+    color: #000;
+    border: 1px solid var(--neon-amber);
+    box-shadow: 0 0 14px var(--neon-glow);
+}
+
+.cyber-btn-amber:hover {
+    background: #ffc83b;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px #000, 0 0 20px var(--neon-glow);
+}
+
+.cyber-btn-ghost {
+    background: transparent;
+    color: var(--neon-amber);
+    border: 1px solid var(--neon-amber);
+}
+
+.cyber-btn-ghost:hover {
+    background: rgba(255, 180, 0, 0.1);
+    color: #fff;
+}
+
+/* Form Inputs */
+.cyber-input {
+    background: #090c14 !important;
+    border: 1px solid var(--cyber-border) !important;
+    color: var(--neon-amber) !important;
+    font-family: 'Space Mono', monospace;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cyber-input:focus {
+    border-color: var(--neon-amber) !important;
+    box-shadow: 0 0 10px var(--neon-glow) !important;
+}
